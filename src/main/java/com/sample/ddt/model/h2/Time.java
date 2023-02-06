@@ -2,6 +2,7 @@ package com.sample.ddt.model.h2;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.sample.ddt.config.MultiDateJsonDeserializer;
+import com.sample.ddt.config.MultiDateStdDeserializer;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -22,12 +23,15 @@ public class Time {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @JsonDeserialize(using = MultiDateJsonDeserializer.class)
+//    @JsonDeserialize(using = MultiDateJsonDeserializer.class)
+    @JsonDeserialize(using = MultiDateStdDeserializer.class)
     private Date updated;
 
-    @JsonDeserialize(using = MultiDateJsonDeserializer.class)
+//    @JsonDeserialize(using = MultiDateJsonDeserializer.class)
+    @JsonDeserialize(using = MultiDateStdDeserializer.class)
     private Date updatedISO;
 
-    @JsonDeserialize(using = MultiDateJsonDeserializer.class)
+//    @JsonDeserialize(using = MultiDateJsonDeserializer.class)
+    @JsonDeserialize(using = MultiDateStdDeserializer.class)
     private Date updateduk;
 }
